@@ -20,4 +20,4 @@ VOLUME ~/Pelis
 COPY default /etc/nginx/sites-enabled/
 ADD fancyindex.tar /var/www/html/
 EXPOSE 80
-CMD ["/bin/nginxpass.sh"]
+CMD ["nginx -g 'daemon off;'"]
