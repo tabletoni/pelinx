@@ -1,7 +1,7 @@
 server {
         listen 80 default_server;
         listen [::]:80 default_server;
-        root /var/www/html; 
+        root /var/www/html;
         server_name _;
         location / {
 		auth_basic "Y tu de quien eres?";

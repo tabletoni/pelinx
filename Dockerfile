@@ -16,8 +16,8 @@ RUN set -eux \
     && chmod 755 /bin/nginxpass.sh \
     && mkdir /config \
     && htpasswd -b -c /config/.htpasswd $USER $PASSWD
-VOLUME ~/Pelis
+
 COPY default /etc/nginx/sites-enabled/
 ADD fancyindex.tar /var/www/html/
 EXPOSE 80
-CMD ["nginx -g 'daemon off;'"]
+CMD  nginx -g 'daemon off;'
