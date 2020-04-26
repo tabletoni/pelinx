@@ -15,7 +15,7 @@ RUN set -eux \
     && ln -sf /dev/stderr /var/log/nginx/error.log \
     && chmod 755 /bin/nginxpass.sh \
     && mkdir /config \
-    && /bin/nginxpass.sh
+    && htpasswd -b -c /config/.htpasswd $USER $PASSWD
 VOLUME ~/Pelis
 COPY default /etc/nginx/sites-enabled/
 ADD fancyindex.tar /var/www/html/
