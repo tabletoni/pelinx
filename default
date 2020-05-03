@@ -1,10 +1,15 @@
 server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
+#        listen 80 default_server;
+#        listen [::]:80 default_server;
+	listen 			443 ssl;
+	server_name 		localhost;
+	ssl_certificate		/run/secrets/site.crt;
+	ssl_certificate_key 	/run/secrets/site.key;
+
         root /var/www/html;
         server_name _;
         location / {
-		auth_basic "Y tu de quien eres?";
+		auth_basic "Quien llama petta?";
 		auth_basic_user_file /config/.htpasswd;
 		fancyindex on;
 		fancyindex_localtime on;

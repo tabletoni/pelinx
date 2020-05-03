@@ -18,6 +18,7 @@ RUN set -eux \
     && htpasswd -b -c /config/.htpasswd $USER $PASSWD
 
 COPY default /etc/nginx/sites-enabled/
+COPY site.key site.crt /var/run/secrets/
 ADD fancyindex.tar /var/www/html/
 EXPOSE 80
 CMD  nginx -g 'daemon off;'
