@@ -1,1 +1,1 @@
-htpasswd -b -c /config/.htpasswd $USER $PASSWD
+htpasswd -b -c /var/run/secrets/htpasswd $USER $PASSWD
