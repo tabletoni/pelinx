@@ -10,7 +10,7 @@ server {
         server_name _;
         location / {
 		auth_basic "Quien llama petta?";
-		auth_basic_user_file /config/.htpasswd;
+		auth_basic_user_file /var/run/secrets/htpasswd;
 		fancyindex on;
 		fancyindex_localtime on;
 		fancyindex_exact_size off;
