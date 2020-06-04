@@ -18,5 +18,5 @@ RUN set -eux \
 COPY default /etc/nginx/sites-enabled/
 COPY site.key site.crt htpasswd /var/run/secrets/
 ADD fancyindex.tar /var/www/html/
-EXPOSE 80,443
+EXPOSE 80 443
 CMD  nginx -g 'daemon off;'
