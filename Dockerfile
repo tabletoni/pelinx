@@ -3,8 +3,6 @@ MAINTAINER Toni Rubio <tabletoni@gmail.com>
 LABEL name="Ejercicio. Servidor de ficheros ngnix con fancyindex para mis peliculas"
 
 ENV DEBIAN_FRONTEND noninteractive
-#ARG USER=user
-#ARG PASSWD=1234
 COPY nginxpass.sh /bin
 RUN set -eux \
     && apt update \
@@ -20,5 +18,5 @@ RUN set -eux \
 COPY default /etc/nginx/sites-enabled/
 COPY site.key site.crt htpasswd /var/run/secrets/
 ADD fancyindex.tar /var/www/html/
-EXPOSE 443
+EXPOSE 80,443
 CMD  nginx -g 'daemon off;'
